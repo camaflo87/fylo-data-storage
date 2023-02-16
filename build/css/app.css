@@ -1,0 +1,296 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: hsl(229deg, 57%, 11%);
+  height: 100vh;
+  font-family: "Raleway", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.contenedor {
+  width: 80%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}
+
+.body {
+  width: 100%;
+  position: relative;
+}
+.body .img-fondo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../images/bg-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  bottom: 0;
+  z-index: -1;
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .body {
+    width: 100%;
+    position: relative;
+  }
+  .body .img-fondo {
+    position: absolute;
+    width: 100%;
+    height: 30rem;
+    background-image: url("../../images/bg-desktop.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    bottom: 0;
+    z-index: -1;
+  }
+}
+.main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenido {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .contenido {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.main_carga {
+  width: 100%;
+  padding: 1rem;
+  background-color: hsl(228deg, 56%, 26%);
+  border-top-right-radius: 10rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  margin-bottom: 2rem;
+}
+.main_carga .main_icon {
+  display: flex;
+  flex-direction: column;
+}
+.main_carga .logo {
+  width: 70%;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 992px) {
+  .main_carga {
+    flex-basis: calc(45% - 1rem);
+    padding: 3rem;
+    background-color: hsl(228deg, 56%, 26%);
+    border-top-right-radius: 10rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    margin-bottom: 0rem;
+  }
+  .main_carga .main_icon {
+    display: flex;
+    flex-direction: column;
+  }
+  .main_carga .logo {
+    width: 50%;
+    padding-bottom: 2rem;
+  }
+}
+.iconos {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.iconos .bg-icon {
+  flex: 0 0 calc(33% - 1rem);
+  background-color: hsl(229deg, 57%, 11%);
+  border: 10px solid hsl(229deg, 57%, 11%);
+  border-radius: 20%;
+}
+
+@media (min-width: 992px) {
+  .iconos {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .iconos .bg-icon {
+    flex: 0 0 calc(33% - 1rem);
+    background-color: hsl(229deg, 57%, 11%);
+    border: 10px solid hsl(229deg, 57%, 11%);
+    border-radius: 20%;
+  }
+}
+.barra_carga {
+  width: 100%;
+  background-color: hsl(228deg, 56%, 26%);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  align-self: flex-end;
+  position: relative;
+}
+.barra_carga p {
+  margin: 0;
+}
+.barra_carga .barra_text {
+  color: hsl(229deg, 7%, 55%);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.barra_carga span {
+  color: hsl(243deg, 100%, 93%);
+  font-weight: 700;
+}
+.barra_carga .puntos_carga {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  color: hsl(243deg, 100%, 93%);
+}
+
+@media (min-width: 768px) {
+  .barra_carga .barra_text {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+}
+@media (min-width: 992px) {
+  .barra_carga {
+    flex-basis: calc(55% - 1rem);
+    background-color: hsl(228deg, 56%, 26%);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    align-self: flex-end;
+    position: relative;
+  }
+  .barra_carga p {
+    margin: 0;
+  }
+  .barra_carga .barra_text {
+    color: hsl(229deg, 7%, 55%);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .barra_carga span {
+    color: hsl(243deg, 100%, 93%);
+    font-weight: 700;
+  }
+  .barra_carga .puntos_carga {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    color: hsl(243deg, 100%, 93%);
+  }
+}
+.barra_uno {
+  height: 1.5rem;
+  background-color: hsl(229deg, 57%, 11%);
+  border-radius: 10px;
+  position: relative;
+  border: 3px solid hsl(229deg, 57%, 11%);
+}
+.barra_uno .barra_dos {
+  position: absolute;
+  height: 100%;
+  background: rgb(189, 26, 72);
+  background: linear-gradient(270deg, rgb(189, 26, 72) 2%, rgba(236, 204, 213, 0.7531184349) 100%);
+  border-radius: 10px;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.barra_dos::after {
+  position: absolute;
+  right: 0;
+  content: "";
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.caja_texto {
+  position: absolute;
+  bottom: -4rem;
+}
+
+@media (min-width: 992px) {
+  .caja_texto {
+    position: absolute;
+    right: 3rem;
+    top: -3rem;
+  }
+}
+.rectangulo {
+  width: 12rem;
+  height: 5rem;
+  background-color: hsl(243deg, 100%, 93%);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.rectangulo .burbuja {
+  color: hsl(229deg, 7%, 55%);
+  font-size: 1rem;
+}
+.rectangulo span {
+  color: hsl(229deg, 57%, 11%);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+@media (min-width: 992px) {
+  .triangulo {
+    position: absolute;
+    width: 0rem;
+    height: 0rem;
+    border-top: 0px solid transparent;
+    border-right: 50px solid hsl(243deg, 100%, 93%);
+    border-bottom: 50px solid transparent;
+    right: 0;
+    top: 4rem;
+  }
+}
